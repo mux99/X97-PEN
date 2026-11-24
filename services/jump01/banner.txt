@@ -1,0 +1,4 @@
+***************************************************
+ Norvantec Precision - IT Administration Bastion
+ Authorized access only. All sessions are logged.
+***************************************************

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Norvantec Precision | LinkedIn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topnav">
+  <div class="topnav-left">
+    <a href="index.html" class="li-logo">in</a>
+    <div class="search-box">Search</div>
+  </div>
+  <div class="topnav-right">
+    <span class="nav-icon">Home</span>
+    <span class="nav-icon">My Network</span>
+    <span class="nav-icon">Jobs</span>
+    <span class="nav-icon">Messaging</span>
+    <span class="nav-icon">Notifications</span>
+  </div>
+</div>
+
+<div class="cover"></div>
+
+<div class="header-card">
+  <div class="logo-row">
+    <div class="company-logo">
+      <svg viewBox="0 0 420 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="hm"><rect width="420" height="400" fill="white"/><circle cx="210" cy="200" r="62" fill="black"/></mask>
+        </defs>
+        <g mask="url(#hm)">
+          <polygon fill="#2C4A6B" points="210.00,76.00 243.80,96.80 254.30,112.24 275.60,98.47 300.82,120.69 290.08,142.40 296.98,159.38 322.65,153.45 333.76,183.22 311.72,197.93 308.58,215.73 334.09,224.18 331.65,255.50 303.85,257.99 293.84,274.19 312.93,294.67 291.65,318.19 268.47,301.57 250.21,308.00 253.58,333.63 223.19,340.92 211.26,314.98 193.21,314.98 181.28,340.92 150.89,333.63 154.26,308.00 136.00,301.57 112.82,318.19 91.54,294.67 110.63,274.19 100.62,257.99 72.82,255.50 70.38,224.18 95.89,215.73 92.75,197.93 70.71,183.22 81.82,153.45 107.49,159.38 114.39,142.40 103.65,120.69 128.87,98.47 150.17,112.24 160.67,96.80 "/>
+        </g>
+        <polygon fill="#E8A530" points="170,105 270,200 170,295 205,295 305,200 205,105"/>
+      </svg>
+    </div>
+    <div class="header-actions">
+      <button class="btn-follow">+ Follow</button>
+      <button class="btn-visit">Visit website</button>
+    </div>
+  </div>
+  <div class="company-name">Norvantec Precision</div>
+  <div class="company-meta">
+    Precision machining for parts that can't fail.<br>
+    Machinery Manufacturing <span class="dot">&middot;</span> Charleroi, Belgium <span class="dot">&middot;</span>
+    1,204 followers <span class="dot">&middot;</span> 32 employees
+  </div>
+  <div class="tabs">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="posts.html">Posts</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="people.html">People</a>
+  </div>
+</div>
+
+<div class="body-grid">
+  <div>
+    <div class="card">
+      <h2>About us</h2>
+      <p>Norvantec Precision supplies CNC-machined components to automotive and industrial-equipment manufacturers from our Charleroi facility. Family-owned since 1979, three generations in. ISO 9001:2015 certified; currently pursuing AS9100 for aerospace subcontracting.</p>
+      <div class="stat-box">
+        <div><b>1979</b><span>Founded</span></div>
+        <div><b>32</b><span>Employees</span></div>
+        <div><b>1,204</b><span>Followers</span></div>
+      </div>
+      <a class="see-all" href="about.html">See all details &rarr;</a>
+    </div>
+    <div class="card">
+      <h2>Posts</h2>
+      <p style="color:var(--grey);">Recent updates from Norvantec Precision.</p>
+      <a class="see-all" href="posts.html">See all posts &rarr;</a>
+    </div>
+  </div>
+  <div>
+    <div class="card side-card">
+      <h2>Company details</h2>
+      <ul>
+        <li><span>Website</span><span>norvantec.lab</span></li>
+        <li><span>Industry</span><span>Machinery Manufacturing</span></li>
+        <li><span>Company size</span><span>11-50 employees</span></li>
+        <li><span>Headquarters</span><span>Charleroi, Belgium</span></li>
+        <li><span>Founded</span><span>1979</span></li>
+        <li><span>Specialties</span><span>CNC, Automotive, Industrial</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Jobs</h2>
+      <p style="color:var(--grey);">4 open roles at Norvantec Precision.</p>
+      <a class="see-all" href="jobs.html">See all jobs &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="single-col">
+  <div class="card">
+    <h2>People at Norvantec Precision</h2>
+    <div class="people-sub">32 employees</div>
+    <div class="people-grid" id="people-grid"></div>
+    <a class="see-all" href="people.html">Show all 32 employees &rarr;</a>
+  </div>
+</div>
+<script>
+  const people = [["Zoé Pitre", "CEO"], ["Neeltje Beijk", "CFO"], ["Desire Bourdette", "COO / Plant Director"], ["Aubrey Bouvier", "IT Manager"], ["Kerman Giguère", "Sysadmin / Network Engineer"], ["Thierry Ricard", "Helpdesk Technician"], ["Prewitt Lapointe", "Production Manager"], ["Hugues Parent", "Shift Supervisor"]];
+  const colors = ['#0A66C2', '#5B6B78', '#2C4A6B', '#8E6E53', '#6B5B95', '#3C7A4E', '#B3433F', '#8a5f10'];
+  const grid = document.getElementById("people-grid");
+  people.forEach(([name, title], i) => {
+    const initials = name.split(" ").map(w => w[0]).slice(0,2).join("").toUpperCase();
+    const color = colors[i % colors.length];
+    const el = document.createElement("div");
+    el.className = "person";
+    el.innerHTML = `
+      <div class="avatar" style="background:${color}">${initials}</div>
+      <b>${name}</b>
+      <span>${title}</span>
+    `;
+    grid.appendChild(el);
+  });
+</script>
+</body>
+</html>

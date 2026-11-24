@@ -1,0 +1,6 @@
+Norvantec Precision - CNC Program Exchange
+--------------------------------------------
+This server is for exchanging CNC program files with approved
+vendors and shift operators.
+
+For access to the operator drop folder, contact IT (ext. 204).

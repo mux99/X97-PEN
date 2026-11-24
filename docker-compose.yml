@@ -1,0 +1,206 @@
+version: "3.8"
+
+# -----------------------------------------------------------------
+# Norvantec Precision - PEN course lab
+#
+# Topology (matches the server inventory discussed in class):
+#
+#   DMZ (10.60.10.0/24)
+#     web01     - public website
+#     mail-gw   - fake SMTP (smtp4dev)
+#     vpn-gw    - VPN gateway (stub service for now)
+#     kali      - student attack box, starts here only
+#
+#   Corporate LAN (10.60.20.0/24)
+#     dc01      - domain controller (enumeration-only stub - deep AD
+#                 attacks are out of scope for PEN, see dc01/Dockerfile)
+#     fs01      - file server (guest share + weak-cred HR share)
+#     print01   - print server (stub)
+#     jump01    - IT bastion (weak SSH password - a real exploitation
+#                 target now, not a network bridge)
+#
+#   Production LAN (10.60.30.0/24)
+#     erp-legacy - old Samba (CVE-2017-7494 / SambaCry)
+#     erp-new    - placeholder for the in-progress ERP rollout
+#     ftp01      - anonymous + weak-credential FTP
+#     qc-db      - MariaDB, weak root password
+#
+#   Management LAN (10.60.40.0/24)
+#     backup01   - stub for now
+#
+# All inter-zone connectivity now goes through the "router" container
+# below - a real Linux box with IP forwarding + iptables, not an
+# incidental side effect of a dual-homed host. See
+# services/router/entrypoint.sh for the ruleset: it's PERMISSIVE right
+# now (every zone can reach every zone) so nothing built so far gets
+# blocked. Tighten it when S12 (segmentation & defense evasion) is
+# actually being built - that file has notes on exactly how.
+#
+# vpn-gw and jump01 used to be the dual-homed "bridge" hosts in an
+# earlier version of this lab. They're single-homed now that the
+# router exists - keeping two different mechanisms for cross-zone
+# access at once was confusing and redundant. They remain interesting
+# as exploitation targets in their own zones (jump01's weak SSH login
+# in particular).
+#
+# No network: host ports below are for instructor convenience only
+# (viewing the mail-gw web UI, browsing web01). Nothing here is meant
+# to be reachable from the real internet - keep this compose stack on
+# an isolated host/VM.
+# -----------------------------------------------------------------
+
+networks:
+  dmz:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.60.10.0/24
+  corporate:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.60.20.0/24
+  production:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.60.30.0/24
+  management:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.60.40.0/24
+
+services:
+
+  # ---------------- Router / firewall ----------------
+  router:
+    build: ./services/router
+    container_name: router
+    hostname: router
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.ip_forward=1
+    networks:
+      dmz:
+        ipv4_address: 10.60.10.254
+      corporate:
+        ipv4_address: 10.60.20.254
+      production:
+        ipv4_address: 10.60.30.254
+      management:
+        ipv4_address: 10.60.40.254
+
+  # ---------------- Student attack box ----------------
+  kali:
+    build: ./services/kali
+    container_name: kali
+    hostname: kali
+    tty: true
+    stdin_open: true
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    depends_on:
+      - router
+    networks:
+      dmz:
+        ipv4_address: 10.60.10.50
+
+  # ---------------- DMZ ----------------
+  web01:
+    build: ./services/web01
+    container_name: web01
+    hostname: web01
+    networks:
+      dmz:
+        ipv4_address: 10.60.10.10
+
+    ports:
+      - "127.0.0.100:80:80"
+
+  vpn-gw:
+    build: ./services/vpn-gw
+    container_name: vpn-gw
+    hostname: vpn-gw
+    networks:
+      dmz:
+        ipv4_address: 10.60.10.12
+    ports:
+      - "127.0.0.100:1194:1194/udp" 
+
+  # ---------------- Corporate LAN ----------------
+  dc01:
+    build: ./services/dc01
+    container_name: dc01
+    hostname: dc01
+    networks:
+      corporate:
+        ipv4_address: 10.60.20.10
+
+  fs01:
+    build: ./services/fs01
+    container_name: fs01
+    hostname: fs01
+    networks:
+      corporate:
+        ipv4_address: 10.60.20.11
+
+  print01:
+    build: ./services/print01
+    container_name: print01
+    hostname: print01
+    networks:
+      corporate:
+        ipv4_address: 10.60.20.12
+
+  jump01:
+    build: ./services/jump01
+    container_name: jump01
+    hostname: jump01
+    networks:
+      corporate:
+        ipv4_address: 10.60.20.20
+
+  # ---------------- Production LAN ----------------
+  erp-legacy:
+    build: ./services/erp-legacy
+    container_name: erp-legacy
+    hostname: erp-legacy
+    networks:
+      production:
+        ipv4_address: 10.60.30.10
+
+  erp-new:
+    build: ./services/erp-new
+    container_name: erp-new
+    hostname: erp-new
+    networks:
+      production:
+        ipv4_address: 10.60.30.11
+
+  ftp01:
+    build: ./services/ftp01
+    container_name: ftp01
+    hostname: ftp01
+    networks:
+      production:
+        ipv4_address: 10.60.30.12
+
+  qc-db:
+    build: ./services/qc-db
+    container_name: qc-db
+    hostname: qc-db
+    networks:
+      production:
+        ipv4_address: 10.60.30.13
+
+  # ---------------- Management LAN ----------------
+  backup01:
+    build: ./services/backup01
+    container_name: backup01
+    hostname: backup01
+    networks:
+      management:
+        ipv4_address: 10.60.40.10

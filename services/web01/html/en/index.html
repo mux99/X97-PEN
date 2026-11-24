@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Norvantec Precision — Precision Machining &amp; Metal Components</title>
+<meta name="description" content="Norvantec Precision supplies precision-machined components to automotive and industrial-equipment manufacturers from our Charleroi facility since 1979.">
+<meta name="generator" content="WordPress 5.4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2B3A;
+    --steel:#2C4A6B;
+    --steel-dark:#1F3550;
+    --amber:#E8A530;
+    --paper:#F3F2EE;
+    --paper-dim:#E7E5DE;
+    --grey:#5B6B78;
+    --line:#D6D3C8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",Arial,Helvetica,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  h1,h2,h3,.brand-word{
+    font-family:"Oswald",Arial Narrow,Arial,sans-serif;
+    font-weight:600;
+    letter-spacing:0.2px;
+    margin:0;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  img,svg{display:block;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand svg{width:34px;height:34px;}
+  .brand-word{font-size:19px;color:var(--ink);}
+  .brand-word span{color:var(--amber);display:block;font-size:10px;letter-spacing:3px;font-weight:500;margin-top:-2px;}
+  nav ul{list-style:none;display:flex;gap:34px;margin:0;padding:0;}
+  nav a{
+    text-decoration:none;color:var(--grey);font-size:14.5px;font-weight:500;
+    padding-bottom:4px;border-bottom:2px solid transparent;
+  }
+  nav a:hover{color:var(--steel);border-bottom-color:var(--amber);}
+  .nav-cta{
+    background:var(--steel);color:#fff;padding:10px 20px;font-size:14px;
+    font-weight:500;text-decoration:none;border-radius:2px;
+  }
+  .nav-cta:hover{background:var(--steel-dark);}
+  .linkedin-btn{
+    width:34px;height:34px;border-radius:4px;background:#0A66C2;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:Georgia,serif;font-weight:800;font-size:18px;
+    text-decoration:none;flex-shrink:0;
+  }
+  .linkedin-btn:hover{background:#004182;}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      linear-gradient(var(--paper), var(--paper)),
+      repeating-linear-gradient(0deg, rgba(44,74,107,0.06) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(90deg, rgba(44,74,107,0.06) 0 1px, transparent 1px 48px);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{
+    max-width:1180px;margin:0 auto;padding:96px 32px 88px;
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;
+  }
+  .hero h1{font-size:46px;line-height:1.12;color:var(--ink);max-width:560px;}
+  .hero h1 em{font-style:normal;color:var(--steel);}
+  .hero p{font-size:17px;color:var(--grey);max-width:480px;margin:22px 0 32px;}
+  .hero-actions{display:flex;gap:16px;}
+  .btn{
+    display:inline-block;padding:13px 26px;font-size:14.5px;font-weight:500;
+    text-decoration:none;border-radius:2px;
+  }
+  .btn-primary{background:var(--amber);color:var(--ink);}
+  .btn-primary:hover{background:#d6961f;}
+  .btn-ghost{border:1px solid var(--steel);color:var(--steel);}
+  .btn-ghost:hover{background:var(--steel);color:#fff;}
+  .hero-mark{opacity:0.9;justify-self:end;}
+  .hero-mark svg{width:300px;height:auto;}
+
+  .stat-strip{
+    border-top:1px solid var(--line);
+    background:var(--steel);
+  }
+  .stat-strip .wrap{
+    display:flex;gap:0;padding:0;
+  }
+  .stat{flex:1;padding:22px 32px;border-left:1px solid rgba(255,255,255,0.12);}
+  .stat:first-child{border-left:none;}
+  .stat b{display:block;font-family:"Oswald",sans-serif;font-size:26px;color:#fff;font-weight:600;}
+  .stat span{font-size:12.5px;color:#B9C7D4;text-transform:uppercase;letter-spacing:1px;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:84px 0;}
+  .eyebrow-line{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .eyebrow-line .num{font-family:"Oswald",sans-serif;color:var(--amber);font-size:14px;font-weight:600;}
+  .eyebrow-line .rule{flex:1;height:1px;background:var(--line);}
+  h2.section-title{font-size:30px;color:var(--ink);max-width:600px;}
+  .section-lede{color:var(--grey);font-size:16px;max-width:620px;margin-top:14px;}
+
+  /* ---------- About ---------- */
+  .about-grid{
+    margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;
+  }
+  .about-grid p{color:var(--grey);margin:0 0 16px;}
+  .timeline{border-left:2px solid var(--line);padding-left:24px;}
+  .tl-item{margin-bottom:28px;position:relative;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-29px;top:4px;width:10px;height:10px;
+    background:var(--amber);border-radius:50%;
+  }
+  .tl-year{font-family:"Oswald",sans-serif;color:var(--steel);font-size:15px;font-weight:600;}
+  .tl-item p{margin:4px 0 0;font-size:14.5px;color:var(--grey);}
+
+  /* ---------- Capabilities ---------- */
+  .cap-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .cap-card{
+    background:#fff;border:1px solid var(--line);padding:32px;
+  }
+  .cap-card h3{font-size:20px;color:var(--ink);margin-bottom:6px;}
+  .cap-card .cap-tag{font-size:12.5px;color:var(--amber);font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+  .cap-card ul{margin:18px 0 0;padding-left:18px;color:var(--grey);font-size:14.5px;}
+  .cap-card li{margin-bottom:8px;}
+
+  .process-row{
+    margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .process-cell{background:var(--paper);padding:24px 22px;}
+  .process-cell b{display:block;font-family:"Oswald",sans-serif;font-size:15px;color:var(--steel);margin-bottom:6px;}
+  .process-cell span{font-size:13.5px;color:var(--grey);}
+
+  /* ---------- Certifications ---------- */
+  .cert-strip{background:var(--paper-dim);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .cert-row{display:flex;gap:48px;padding:40px 0;align-items:center;flex-wrap:wrap;}
+  .cert-item{display:flex;align-items:center;gap:14px;}
+  .cert-badge{
+    width:46px;height:46px;border:2px solid var(--steel);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .cert-badge span{font-family:"Oswald",sans-serif;font-size:11px;color:var(--steel);font-weight:600;}
+  .cert-item b{display:block;font-size:14.5px;color:var(--ink);}
+  .cert-item small{color:var(--grey);font-size:13px;}
+
+  /* ---------- Leadership ---------- */
+  .team-grid{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .team-card{border-top:3px solid var(--amber);padding-top:18px;}
+  .team-card h4{font-family:"Oswald",sans-serif;font-size:17px;color:var(--ink);font-weight:600;}
+  .team-card .role{font-size:13px;color:var(--steel);font-weight:600;margin:3px 0 10px;}
+  .team-card p{font-size:13.5px;color:var(--grey);margin:0;}
+
+  /* ---------- Careers ---------- */
+  .careers{background:var(--steel);color:#fff;}
+  .careers .section-title{color:#fff;}
+  .careers .section-lede{color:#C4D2DE;}
+  .careers-row{margin-top:40px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:center;}
+  .open-roles{list-style:none;margin:0;padding:0;}
+  .open-roles li{
+    display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.15);
+    font-size:14.5px;
+  }
+  .open-roles li span{color:#9FB3C4;font-size:13px;}
+  .careers-cta{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);padding:28px;}
+  .careers-cta p{color:#C4D2DE;font-size:14px;margin:0 0 18px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .contact-block b{display:block;font-size:12.5px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+  .contact-block p{margin:0 0 26px;color:var(--grey);font-size:15px;}
+  .contact-block a{color:var(--steel);text-decoration:none;font-weight:500;}
+  .map-box{
+    background:var(--paper-dim);border:1px solid var(--line);height:100%;min-height:220px;
+    display:flex;align-items:center;justify-content:center;color:var(--grey);font-size:13.5px;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(44,74,107,0.08) 0 1px, transparent 1px 30px),
+      repeating-linear-gradient(90deg, rgba(44,74,107,0.08) 0 1px, transparent 1px 30px);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line);padding:36px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-row .brand-word{font-size:15px;}
+  .foot-links{list-style:none;display:flex;gap:26px;margin:0;padding:0;font-size:13.5px;color:var(--grey);}
+  .foot-links a{text-decoration:none;color:var(--grey);}
+  .foot-links a:hover{color:var(--steel);}
+  .copyright{font-size:12.5px;color:#8C98A3;margin-top:18px;}
+
+  @media (max-width:860px){
+    .nav ul{display:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-mark{display:none;}
+    .about-grid,.cap-grid,.team-grid,.careers-row,.contact-grid{grid-template-columns:1fr;}
+    .process-row{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg viewBox="0 0 420 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="hm"><rect width="420" height="400" fill="white"/><circle cx="210" cy="200" r="62" fill="black"/></mask>
+        </defs>
+        <g mask="url(#hm)">
+          <polygon fill="#2C4A6B" points="210.00,76.00 243.80,96.80 254.30,112.24 275.60,98.47 300.82,120.69 290.08,142.40 296.98,159.38 322.65,153.45 333.76,183.22 311.72,197.93 308.58,215.73 334.09,224.18 331.65,255.50 303.85,257.99 293.84,274.19 312.93,294.67 291.65,318.19 268.47,301.57 250.21,308.00 253.58,333.63 223.19,340.92 211.26,314.98 193.21,314.98 181.28,340.92 150.89,333.63 154.26,308.00 136.00,301.57 112.82,318.19 91.54,294.67 110.63,274.19 100.62,257.99 72.82,255.50 70.38,224.18 95.89,215.73 92.75,197.93 70.71,183.22 81.82,153.45 107.49,159.38 114.39,142.40 103.65,120.69 128.87,98.47 150.17,112.24 160.67,96.80 "/>
+        </g>
+        <g clip-path="none">
+          <polygon fill="#E8A530" points="170,105 270,200 170,295 205,295 305,200 205,105"/>
+        </g>
+      </svg>
+      <div class="brand-word">NORVANTEC<span>PRECISION</span></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="linkedin-btn" href="linkedin/" aria-label="Norvantec Precision on LinkedIn" title="Follow us on LinkedIn">in</a>
+      <a class="nav-cta" href="#contact">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Precision machining for parts that <em>can't</em> fail.</h1>
+      <p>Norvantec Precision has supplied CNC-machined components to automotive and industrial-equipment manufacturers from our Charleroi facility since 1979 — family-owned, three generations in.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#capabilities">Our Capabilities</a>
+        <a class="btn btn-ghost" href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <svg viewBox="0 0 420 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="hm2"><rect width="420" height="400" fill="white"/><circle cx="210" cy="200" r="62" fill="black"/></mask>
+        </defs>
+        <g mask="url(#hm2)">
+          <polygon fill="#2C4A6B" points="210.00,76.00 243.80,96.80 254.30,112.24 275.60,98.47 300.82,120.69 290.08,142.40 296.98,159.38 322.65,153.45 333.76,183.22 311.72,197.93 308.58,215.73 334.09,224.18 331.65,255.50 303.85,257.99 293.84,274.19 312.93,294.67 291.65,318.19 268.47,301.57 250.21,308.00 253.58,333.63 223.19,340.92 211.26,314.98 193.21,314.98 181.28,340.92 150.89,333.63 154.26,308.00 136.00,301.57 112.82,318.19 91.54,294.67 110.63,274.19 100.62,257.99 72.82,255.50 70.38,224.18 95.89,215.73 92.75,197.93 70.71,183.22 81.82,153.45 107.49,159.38 114.39,142.40 103.65,120.69 128.87,98.47 150.17,112.24 160.67,96.80 "/>
+        </g>
+        <polygon fill="#E8A530" opacity="0.92" points="170,105 270,200 170,295 205,295 305,200 205,105"/>
+      </svg>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="stat"><b>1979</b><span>Founded</span></div>
+      <div class="stat"><b>32</b><span>Employees</span></div>
+      <div class="stat"><b>2</b><span>Core Sectors</span></div>
+      <div class="stat"><b>ISO 9001</b><span>Certified</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow-line"><span class="num">01</span><div class="rule"></div></div>
+    <h2 class="section-title">Three generations of precision work.</h2>
+    <p class="section-lede">What started as a small tool-and-die shop is now a trusted subcontractor to automotive and industrial OEMs across Belgium and neighbouring markets.</p>
+    <div class="about-grid">
+      <div>
+        <p>Norvantec Precision was founded in 1979 by Albertine Bourdette, who opened a small tool-and-die workshop in the Charleroi region to serve the regional automotive-parts boom of the era. What began as subcontract machining for a handful of local clients has grown into a 32-person operation supplying structural and precision components to Tier-2 automotive suppliers and industrial-equipment OEMs.</p>
+        <p>The company remains family-owned. Today's leadership includes the founder's grandson and great-granddaughter, continuing a hands-on approach to quality that's carried the business through four decades of industry change.</p>
+        <p>We're currently investing in our next chapter: a modernised ERP rollout across production and quality systems, and pursuit of AS9100 certification to open the door to aerospace subcontracting work.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">1979</div><p>Founded as a tool-and-die subcontractor in Charleroi.</p></div>
+        <div class="tl-item"><div class="tl-year">1994</div><p>First direct automotive Tier-2 supply contract.</p></div>
+        <div class="tl-item"><div class="tl-year">2011</div><p>ISO 9001 certification achieved; facility expanded.</p></div>
+        <div class="tl-item"><div class="tl-year">2023</div><p>ERP modernisation programme kicked off across production &amp; QC.</p></div>
+        <div class="tl-item"><div class="tl-year">Today</div><p>Pursuing AS9100 certification for aerospace subcontracting.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="eyebrow-line"><span class="num">02</span><div class="rule"></div></div>
+    <h2 class="section-title">What we make, and who we make it for.</h2>
+    <p class="section-lede">Two client tracks, one quality standard: every part leaves our floor traceable, inspected, and documented.</p>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-tag">Automotive</div>
+        <h3>Tier-2 structural components</h3>
+        <ul>
+          <li>Gearbox housings</li>
+          <li>Mounting brackets</li>
+          <li>Welded structural subassemblies</li>
+          <li>Low-to-mid volume production runs</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <div class="cap-tag">Industrial Equipment</div>
+        <h3>Custom OEM machined parts</h3>
+        <ul>
+          <li>Conveyor system components</li>
+          <li>Packaging-equipment parts</li>
+          <li>Short-run prototyping</li>
+          <li>Reverse-engineered replacement parts</li>
+        </ul>
+      </div>
+    </div>
+    <div class="process-row">
+      <div class="process-cell"><b>CNC Milling</b><span>3 &amp; 5-axis, tight-tolerance work</span></div>
+      <div class="process-cell"><b>CNC Turning</b><span>Precision shafts &amp; housings</span></div>
+      <div class="process-cell"><b>Stamping</b><span>Sheet-metal structural parts</span></div>
+      <div class="process-cell"><b>In-house QC</b><span>CMM inspection, full traceability</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cert-strip">
+  <div class="wrap">
+    <div class="cert-row">
+      <div class="cert-item">
+        <div class="cert-badge"><span>9001</span></div>
+        <div><b>ISO 9001:2015</b><small>Certified quality management</small></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-badge"><span>9100</span></div>
+        <div><b>AS9100</b><small>In progress — aerospace subcontracting</small></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-badge"><span>CE</span></div>
+        <div><b>CE-marked production</b><small>Full EU conformity</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap">
+    <div class="eyebrow-line"><span class="num">03</span><div class="rule"></div></div>
+    <h2 class="section-title">Leadership</h2>
+    <p class="section-lede">A small team that's stayed close to the shop floor.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <h4>Zoé Pitre</h4>
+        <div class="role">Chief Executive Officer</div>
+        <p>With Norvantec since 2001; took over as CEO in 2015. Oversees strategy, client relationships, and the AS9100 certification push.</p>
+      </div>
+      <div class="team-card">
+        <h4>Desire Bourdette</h4>
+        <div class="role">COO / Plant Director</div>
+        <p>Grandson of founder Albertine Bourdette. Runs day-to-day plant operations and production scheduling.</p>
+      </div>
+      <div class="team-card">
+        <h4>Lance Rouze</h4>
+        <div class="role">Engineering Manager</div>
+        <p>Leads the design engineering team and client technical liaison for new part programmes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="careers" class="careers">
+  <div class="wrap">
+    <div class="eyebrow-line"><span class="num">04</span><div class="rule" style="background:rgba(255,255,255,0.15);"></div></div>
+    <h2 class="section-title">Join the floor.</h2>
+    <p class="section-lede">We're growing into aerospace-grade work — and hiring for it.</p>
+    <div class="careers-row">
+      <ul class="open-roles">
+        <li>CNC Machinist <span>Production</span></li>
+        <li>Quality Control Inspector <span>Production</span></li>
+        <li>Junior Design Engineer <span>Engineering</span></li>
+        <li>IT Support Technician <span>IT</span></li>
+      </ul>
+      <div class="careers-cta">
+        <p>Send your CV and a short cover letter to our HR team. We reply to every application within two weeks.</p>
+        <a class="btn btn-primary" href="mailto:careers@norvantec.lab">careers@norvantec.lab</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow-line"><span class="num">05</span><div class="rule"></div></div>
+    <h2 class="section-title">Get in touch.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-block">
+          <b>Visit</b>
+          <p>Zone Industrielle de Marchienne<br>6030 Charleroi, Belgium</p>
+          <b>Call</b>
+          <p><a href="tel:+3271000000">+32 71 00 00 00</a></p>
+          <b>Email</b>
+          <p><a href="mailto:info@norvantec.lab">info@norvantec.lab</a></p>
+        </div>
+      </div>
+      <div class="map-box">Zone Industrielle de Marchienne — Charleroi</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="brand-word">NORVANTEC<span>PRECISION</span></div>
+      <ul class="foot-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="copyright">© 2026 Norvantec Precision SA. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- staging build — remember to disable before go-live: dev.norvantec.lab -->
+</body>
+</html>
